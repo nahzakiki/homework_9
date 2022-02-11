@@ -21,8 +21,10 @@ class _NumpadState extends State<Numpad> {
         child: Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
             colors: [
-              Colors.white,
+              Colors.blue.shade100,
               Colors.blueAccent,
             ],
           )),
@@ -39,7 +41,7 @@ class _NumpadState extends State<Numpad> {
                         child: Icon(
                           Icons.lock_outlined,
                           size: 70.0,
-                          color: Colors.blueGrey,
+                          color: const Color(0xff1A237E),
                         ),
                       ),
                       Padding(
@@ -48,7 +50,7 @@ class _NumpadState extends State<Numpad> {
                           'LOGIN',
                           style: TextStyle(
                               fontSize: 25.0,
-                              color: Colors.blueGrey,
+                              color: const Color(0xff1A237E),
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -56,13 +58,13 @@ class _NumpadState extends State<Numpad> {
                         padding: const EdgeInsets.all(5.0),
                         child: Text(
                           'Enter PIN to login',
-                          style: TextStyle(fontSize: 16.0, color: Colors.blueGrey),
+                          style: TextStyle(
+                              fontSize: 16.0, color: const Color(0xff1A237E)),
                         ),
                       ),
                     ],
                   ),
                 ),
-
                 Padding(
                   padding: const EdgeInsets.only(top: 0.0, bottom: 60.0),
                   child: Row(
@@ -75,7 +77,7 @@ class _NumpadState extends State<Numpad> {
                           height: 20.0,
                           margin: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: Colors.blueGrey,
+                            color: const Color(0xFF4A148C),
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -85,7 +87,7 @@ class _NumpadState extends State<Numpad> {
                           height: 20.0,
                           margin: EdgeInsets.all(8.0),
                           decoration: BoxDecoration(
-                            color: Colors.blueGrey.shade100,
+                            color: const Color(0xffe1bee7),
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -183,7 +185,7 @@ class _NumpadState extends State<Numpad> {
           decoration: (num == -1)
               ? null
               : BoxDecoration(
-                  border: Border.all(width: 1.0),
+                  border: Border.all(width: 1.0, color: Colors.lightBlueAccent),
                   shape: BoxShape.circle,
                   color: Colors.white,
                 ),
@@ -192,7 +194,8 @@ class _NumpadState extends State<Numpad> {
           height: Numpad.buttonSize,
           // conditional operator (?:)
           child: (num == -1)
-              ? Icon(Icons.backspace_outlined)
+
+              ? Icon(Icons.backspace_outlined,color: Colors.deepPurple)
               : Text(
                   '$num',
                   style: TextStyle(fontSize: 15.0),
